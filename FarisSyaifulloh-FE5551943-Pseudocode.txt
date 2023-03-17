@@ -1,0 +1,43 @@
+    
+    READ AND WRITE menu with empty list[]
+    READ AND WRITE cart with empty list[]
+    READ AND WRITE checkout with FALSE
+    READ AND WRITE option with empty string
+    READ AND WRITE total with 0
+    
+    
+    print("Nasi Goreng")
+    print("Mie Goreng")
+    print("Es Teh")
+    print("Es Jeruk")
+    
+    
+    DISPLAY "Menu:"
+    FOR i in range(len(menu)):
+        DISPLAY i+1, menu[i]
+   
+    
+    WHILE not checkout:
+        READ option
+        IF option.isdigit() AND int(option) > 0 AND int(option) <= len(menu):
+            cart.append(menu[int(option)-1])
+        ELSE IF option == "c":
+            checkout = TRUE
+        ELSE:
+            DISPLAY "Invalid option"
+   
+    
+    FOR item in cart:
+        IF item == "Nasi Goreng":
+            total += 15000
+        ELSE IF item == "Mie Goreng":
+            total += 12000
+	ELSE IF item == "Es Teh":
+            total += 5000
+        ELSE IF item == "Es Jeruk":
+            total += 7000
+    
+    
+    DISPLAY "Total: ", total
+    
+    
